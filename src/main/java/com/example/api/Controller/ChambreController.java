@@ -22,13 +22,13 @@ public class ChambreController {
     private final ChambreService chambreService;
 
     // Get All Restaurant
-    @GetMapping("/all")
+    @GetMapping("/allChambres")
     public ResponseEntity<List<Chambre>> getAllChambre() {
         List<Chambre> restaurants = chambreService.getAllChambre();
         return ResponseEntity.status(HttpStatus.OK).body(restaurants);
     }
 
-    @PostMapping("/add")
+    @PostMapping("/addChambre")
     public ResponseEntity<Chambre> addChambre(@RequestBody ChambreRequest chambreRequest) {
         Chambre chambre = chambreService.addChambre(chambreRequest);
         return ResponseEntity.status(HttpStatus.OK).body(chambre);
